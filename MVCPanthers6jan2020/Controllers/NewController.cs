@@ -9,7 +9,7 @@ namespace MVCPanthers6jan2020.Controllers
 {
     public class NewController : Controller
     {
-        // GET: New
+        // GET: New code is updated
        public string getName()
         {
             return "Rahul " + getStudentName();
