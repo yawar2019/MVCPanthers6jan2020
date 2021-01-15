@@ -9,7 +9,7 @@ namespace MVCPanthers6jan2020.Controllers
 {
     public class NewController : Controller
     {
-        // GET: New code is updated twice
+        // GET: New code is updated twice done
        public string getName()
         {
             return "Rahul " + getStudentName();
