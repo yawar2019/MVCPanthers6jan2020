@@ -121,7 +121,85 @@ namespace MVCPanthers6jan2020.Controllers
 
             return View(Obj);
         }
+        public ActionResult GetTestData4()
+        {
+            List<EmployeeModel> listObj = new List<EmployeeModel>();
+
+            EmployeeModel Obj = new EmployeeModel();
+            Obj.EmpId = 1;
+            Obj.EmpName = "Rahul";
+            Obj.EmpSalary = 25600;
 
 
+            EmployeeModel Obj1 = new EmployeeModel();
+            Obj1.EmpId = 2;
+            Obj1.EmpName = "Vijay";
+            Obj1.EmpSalary = 45600;
+
+
+            EmployeeModel Obj2 = new EmployeeModel();
+            Obj2.EmpId = 3;
+            Obj2.EmpName = "Prashant";
+            Obj2.EmpSalary = 65600;
+
+
+            listObj.Add(Obj);
+            listObj.Add(Obj1);
+            listObj.Add(Obj2);
+
+
+
+            return View(listObj);
+        }
+
+        public ActionResult GetTestData5()
+        {
+            List<EmployeeModel> listObj = new List<EmployeeModel>();
+            List<DepartmentModel> listDepartment = new List<DepartmentModel>();
+
+            EmployeeModel Obj = new EmployeeModel();
+            Obj.EmpId = 1;
+            Obj.EmpName = "Rahul";
+            Obj.EmpSalary = 25600;
+            
+
+            EmployeeModel Obj1 = new EmployeeModel();
+            Obj1.EmpId = 2;
+            Obj1.EmpName = "Vijay";
+            Obj1.EmpSalary = 45600;
+
+
+            EmployeeModel Obj2 = new EmployeeModel();
+            Obj2.EmpId = 3;
+            Obj2.EmpName = "Prashant";
+            Obj2.EmpSalary = 65600;
+
+
+            listObj.Add(Obj);
+            listObj.Add(Obj1);
+            listObj.Add(Obj2);//3 employees
+
+
+
+
+            DepartmentModel dobj = new DepartmentModel();
+            dobj.DeptId = 1;
+            dobj.DeptName = "ECE";
+
+            DepartmentModel dobj1 = new DepartmentModel();
+            dobj1.DeptId = 2;
+            dobj1.DeptName = "IT";
+
+            listDepartment.Add(dobj);
+            listDepartment.Add(dobj1);//2 dept
+
+            EmpDeptModel empdeptObj = new Models.EmpDeptModel();
+
+            empdeptObj.emp = listObj;
+            empdeptObj.dept = listDepartment;
+
+
+            return View(empdeptObj);
+        }
     }
 }
