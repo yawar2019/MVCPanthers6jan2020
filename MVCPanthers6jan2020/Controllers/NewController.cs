@@ -121,7 +121,7 @@ namespace MVCPanthers6jan2020.Controllers
 
             return View(Obj);
         }
-        public ActionResult GetTestData4()
+        public ViewResult GetTestData4()
         {
             List<EmployeeModel> listObj = new List<EmployeeModel>();
 
@@ -201,5 +201,43 @@ namespace MVCPanthers6jan2020.Controllers
 
             return View(empdeptObj);
         }
+
+        public ViewResult getPartialView() {
+
+            return View();
+        }
+
+        public ViewResult getPartialView2()
+        {
+
+            List<EmployeeModel> listObj = new List<EmployeeModel>();
+
+            EmployeeModel Obj = new EmployeeModel();
+            Obj.EmpId = 1;
+            Obj.EmpName = "Rahul";
+            Obj.EmpSalary = 25600;
+
+
+            EmployeeModel Obj1 = new EmployeeModel();
+            Obj1.EmpId = 2;
+            Obj1.EmpName = "Vijay";
+            Obj1.EmpSalary = 45600;
+
+
+            EmployeeModel Obj2 = new EmployeeModel();
+            Obj2.EmpId = 3;
+            Obj2.EmpName = "Prashant";
+            Obj2.EmpSalary = 65600;
+
+
+            listObj.Add(Obj);
+            listObj.Add(Obj1);
+            listObj.Add(Obj2);
+
+
+
+            return View(listObj);
+        }
+
     }
 }

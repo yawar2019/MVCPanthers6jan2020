@@ -1,0 +1,16 @@
+﻿@model List<MVCPanthers6jan2020.Models.EmployeeModel>
+@{
+    ViewBag.Title = "getPartialView2";
+
+}
+
+<h2> Partial View2</h2>
+
+@{
+    var k = Html.Partial("_MyPartialView2", Model);
+    
+        }
+@{
+    Html.RenderPartial("_MyPartialView2", Model);
+    }
+ 
