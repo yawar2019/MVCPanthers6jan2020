@@ -18,11 +18,17 @@ namespace MVCPanthers6jan2020
            
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Default", action = "GetIndex", id = UrlParameter.Optional }
+                name: "Default1",
+                url: "Sample/MyTestRoute",
+                defaults: new { controller = "New", action = "GetTestData4", id = UrlParameter.Optional }
             );
-            
+
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Default", action = "GetIndex", id = UrlParameter.Optional }
+           );
+
         }
     }
 }
