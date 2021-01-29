@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FE564919-0877-4218-AA25-01711B1FC879}</ProjectGuid>
+    <ProjectGuid>{C7213504-42A7-4C5A-9876-D6336F859BF0}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCPanthers6jan2020</RootNamespace>
-    <AssemblyName>MVCPanthers6jan2020</AssemblyName>
+    <RootNamespace>AdoNetExample</RootNamespace>
+    <AssemblyName>AdoNetExample</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -126,24 +126,19 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="Doc\GenerateReportPDF.pdf" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\New\GetmyView.cshtml" />
-    <Content Include="Views\New\TestView.cshtml" />
-    <Content Include="Views\Default\GetIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\NewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\EmployeeContext.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,21 +150,14 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\New\GetTestData.cshtml" />
-    <Content Include="Views\New\GetTestData2.cshtml" />
-    <Content Include="Views\New\GetDisplayMultipleEmployees.cshtml" />
-    <Content Include="Views\New\GetTestData3.cshtml" />
-    <Content Include="Views\New\GetTestData4.cshtml" />
-    <Content Include="Views\New\GetTestData5.cshtml" />
-    <Content Include="Views\Shared\_MyPartialView.cshtml" />
-    <Content Include="Views\New\getPartialView.cshtml" />
-    <Content Include="Views\New\getPartialView2.cshtml" />
-    <Content Include="Views\Shared\_MyPartialView2.cshtml" />
-    <Content Include="Views\Default\GetIndex2.cshtml" />
+    <Content Include="Views\Default\Create.cshtml" />
+    <Content Include="Views\Default\Edit.cshtml" />
+    <Content Include="Views\Default\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -193,9 +181,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62624</DevelopmentServerPort>
+          <DevelopmentServerPort>51037</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62624/</IISUrl>
+          <IISUrl>http://localhost:51037/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

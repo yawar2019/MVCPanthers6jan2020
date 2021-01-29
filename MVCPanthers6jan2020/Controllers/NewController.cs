@@ -306,5 +306,29 @@ namespace MVCPanthers6jan2020.Controllers
          
             return Json(listObj,JsonRequestBehavior.AllowGet);
         }
+
+        public FileResult getMeFile()
+        {
+            return File("~/Doc/GenerateReportPDF.pdf", "application/pdf");
+        }
+
+        public ContentResult getContent(int ? id) {
+            if (id == 1)
+            {
+                return Content("Tiger Zinda hai");
+            }
+            else if (id==2)
+            {
+                return Content("<p style=color:red;>Hello World</p>");
+            }
+            else if(id==3)
+            {
+                return Content("<script>alert('Hello World')</script>");
+            }
+            else
+            {
+                return Content("<Employee><id>1</id><name>Rahul</name></Employee>");
+            }
+        }
     }
 }
