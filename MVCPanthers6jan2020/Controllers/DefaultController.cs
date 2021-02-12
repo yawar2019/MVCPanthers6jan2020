@@ -24,5 +24,15 @@ namespace MVCPanthers6jan2020.Controllers
             return View();
         }
 
+
+        public ActionResult HtmlHelpersExample()
+        {
+            AmithDbEntities db = new Models.AmithDbEntities();
+            ViewBag.Country = new SelectList(db.Countries, "Id", "Name",4);
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpName = "Chandra";
+            return View(emp);
+        }
+
     }
 }

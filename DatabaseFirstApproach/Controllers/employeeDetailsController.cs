@@ -17,7 +17,19 @@ namespace DatabaseFirstApproach.Controllers
         // GET: employeeDetails
         public ActionResult Index()
         {
-            return View(db.employeeDetails.ToList());
+            var record = (from emp in db.employeeDetails
+                          join dept in db.Departments
+                          on emp.DeptId equals dept.DeptId
+                          select new EmpDepartment
+                          {
+                              EmpId = emp.EmpId,
+                              EmpName = emp.EmpName,
+                              EmpSalary = emp.EmpSalary,
+                              DeptId = dept.DeptId,
+                              DeptName = dept.DeptName,
+
+                          }).ToList();
+            return View(record);
         }
 
         // GET: employeeDetails/Details/5

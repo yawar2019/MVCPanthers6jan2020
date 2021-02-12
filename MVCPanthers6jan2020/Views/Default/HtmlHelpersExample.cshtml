@@ -1,0 +1,58 @@
+﻿
+@using MVCPanthers6jan2020.CustomHelper
+@model MVCPanthers6jan2020.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelpersExample";
+}
+
+<h2>HtmlHelpersExample</h2>
+
+<script>
+    function fun() {
+
+        alert("Hello World");
+    }
+</script>
+
+ 
+@Html.TextBox("EmpName",null, new { @style = "background-color:rosybrown;color:white" , @class="form-control" ,@id="txtEmpName", @onclick = "fun()" })   <br />
+
+<input type="text" id="Lname" name="Lname" value="Chandra" style="background-color:rosybrown;color:white" class="form-control" onclick="fun()" /><br />
+
+<br />
+
+@Html.Password("pwd","hello")<br />
+<span>Male</span>@Html.RadioButton("Gender","Male",true)
+<span>FeMale</span>@Html.RadioButton("Gender", "FeMale")<br/>
+<br />
+
+<span>java</span>@Html.CheckBox("Java",true)<br />
+<span>Dotent</span> @Html.CheckBox("Java")<br />
+
+@Html.DropDownList("Country",new List<SelectListItem>() {
+    new SelectListItem {Text="India",Value="1" ,Selected=true},
+    new SelectListItem {Text="japan",Value="2"},
+    new SelectListItem {Text="bangladesh",Value="3" }
+
+
+},"Select Country")
+<br />
+@Html.DropDownList("Country")<br />
+@Html.DropDownList("ddlCountry",(IEnumerable<SelectListItem>)ViewBag.Country)<br />
+@Html.TextArea("Address","Hyderabad",20,90,null)
+
+<br />
+@Html.TextBoxFor(s=>s.EmpName)<br />
+
+@MyControl.MyLabel("I Agree to the Document")
+<br />
+@Html.createUrControl("text","background-color:blue;")<br />
+@Html.createUrControl("file", "background-color:blue;")<br />
+@Html.createUrControl("radio", "background-color:blue;")<br />
+@Html.createUrControl("checkbox", "background-color:blue;")<br />
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")

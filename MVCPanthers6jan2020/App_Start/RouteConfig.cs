@@ -26,7 +26,7 @@ namespace MVCPanthers6jan2020
             routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Default", action = "GetIndex", id = UrlParameter.Optional }
+               defaults: new { controller = "Default", action = "HtmlHelpersExample", id = UrlParameter.Optional }
            );
 
         }
