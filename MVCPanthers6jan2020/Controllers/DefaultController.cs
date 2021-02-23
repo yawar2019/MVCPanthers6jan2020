@@ -34,5 +34,56 @@ namespace MVCPanthers6jan2020.Controllers
             return View(emp);
         }
 
+
+        public ActionResult ValidationExample()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(Register r)
+        {
+            if (ModelState.IsValid)
+            {
+                //Validate code
+                return View(r);
+            }
+            else
+            {
+                return View(r);
+            }
+
+           
+        }
+
+
+        public ActionResult SendViewData()
+        {
+            //ViewData["StudentName"] = "Rahul";
+
+            ViewBag.studentName = "Rahul";
+            return View();
+           // return RedirectToAction("ReceiveViewData");
+        }
+        public ActionResult ReceiveViewData()
+        {
+           // string result = ViewData["StudentName"].ToString();
+            string result = ViewBag.studentName;
+            return View();
+        }
+
+        public ActionResult TempdataExample() {
+            TempData["life"] = "life is beautiful";
+            return RedirectToAction("TempViewData");
+        }
+
+        public ActionResult TempViewData()
+        {
+             //string result = TempData["life"].ToString();
+            //ViewBag.rahulLife = result;
+            // TempData.Keep();
+            string result= TempData.Peek("life").ToString();
+            ViewBag.rahulLife = result;
+            return View();
+        }
     }
 }
